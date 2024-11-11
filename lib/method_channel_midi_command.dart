@@ -101,6 +101,22 @@ class MethodChannelMidiCommand extends MidiCommandPlatform {
     _methodChannel.invokeMethod('disconnectDevice', device.toDictionary);
   }
 
+  @override
+  void selectInputPort(MidiDevice device, int portNumber) {
+    _methodChannel.invokeMethod(
+      'selectInputPort',
+      {"deviceId": device.id, "portNumber": portNumber},
+    );
+  }
+
+  @override
+  void selectOutputPort(MidiDevice device, int portNumber) {
+    _methodChannel.invokeMethod(
+      'selectOutputPort',
+      {"deviceId": device.id, "portNumber": portNumber},
+    );
+  }
+
   /// Disconnects from all devices.
   @override
   void teardown() {

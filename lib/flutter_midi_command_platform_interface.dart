@@ -78,6 +78,16 @@ abstract class MidiCommandPlatform extends PlatformInterface {
     throw UnimplementedError('disconnectDevice() has not been implemented.');
   }
 
+  /// Selects a specific input port on the device. Used on Android.
+  void selectInputPort(MidiDevice device, int portNumber) {
+    throw UnimplementedError('selectInputPort() has not been implemented.');
+  }
+
+  /// Selects a specific output port on the device. Used on Android.
+  void selectOutputPort(MidiDevice device, int portNumber) {
+    throw UnimplementedError('selectOutputPort() has not been implemented.');
+  }
+
   /// Disconnects from all devices.
   void teardown() {
     throw UnimplementedError('teardown() has not been implemented.');
